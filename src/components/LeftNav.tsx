@@ -23,14 +23,14 @@ function LeftNav({ menu, toggleMenu }: IProps) {
         )}
       </div>
       {/* Nav Links */}
-      <div className="w-full md:w-2/3 h-full flex flex-col p-5">
+      <nav className="w-full md:w-2/3 h-full flex flex-col p-5">
         <ul className="mt-0 md:mt-20">
           <li className="text-primary text-lg px-2 py-5">Home</li>
           <li className="text-primary text-lg px-2 py-5">My Works</li>
           <li className="text-primary text-lg px-2 py-5">Articles</li>
           <li className="text-primary text-lg px-2 py-5">Contact</li>
         </ul>
-      </div>
+      </nav>
       {/* Social Media links */}
       <div className="w-1/3 h-full hidden md:flex flex-col justify-end items-center p-5">
         <FaLinkedinIn className="text-primary text-2xl m-3 " />

@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       colors: {
         primary: "#CE6868",
+        primaryLight: "#E28888",
         secondary: "#FBECE8",
       },
     },
