@@ -7,35 +7,35 @@ function LeftNav({ menu, toggleMenu }: IProps) {
   return (
     <div
       // TODO-1
-      className={`w-[192px] md:w-72 h-[100vh] border-r border-primary bg-secondary md:flex fixed z-40 top-0 ${
-        menu ? "left-0" : "-left-[192px]"
+      className={`fixed top-0 z-40 flex h-[100vh] w-[180px] flex-col border-r border-primary bg-secondary md:w-[280px] md:flex-row ${
+        menu ? "left-0" : "-left-[180px]"
       }`}
     >
       {/* Menu button */}
       <div
-        className="hidden md:block fixed top-6 left-6 z-50"
+        className="fixed top-6 left-6 z-50 hidden md:block"
         onClick={toggleMenu}
       >
         {menu ? (
-          <IoCloseOutline className="text-primary text-4xl" />
+          <IoCloseOutline className="text-4xl text-primary" />
         ) : (
-          <IoMenuOutline className="text-primary text-4xl" />
+          <IoMenuOutline className="text-4xl text-primary" />
         )}
       </div>
       {/* Nav Links */}
-      <nav className="w-full md:w-2/3 h-full flex flex-col p-5">
+      <nav className="flex h-full flex-[2] flex-col p-5">
         <ul className="mt-0 md:mt-20">
-          <li className="text-primary text-lg px-2 py-5">Home</li>
-          <li className="text-primary text-lg px-2 py-5">My Works</li>
-          <li className="text-primary text-lg px-2 py-5">Articles</li>
-          <li className="text-primary text-lg px-2 py-5">Contact</li>
+          <li className="px-2 py-5 text-lg text-primary">Home</li>
+          <li className="px-2 py-5 text-lg text-primary">My Works</li>
+          <li className="px-2 py-5 text-lg text-primary">Articles</li>
+          <li className="px-2 py-5 text-lg text-primary">Contact</li>
         </ul>
       </nav>
       {/* Social Media links */}
-      <div className="w-1/3 h-full hidden md:flex flex-col justify-end items-center p-5">
-        <FaLinkedinIn className="text-primary text-2xl m-3 " />
-        <FaGithub className="text-primary text-2xl m-3" />
-        <HiMail className="text-primary text-2xl m-3" />
+      <div className="flex h-full flex-[1] flex-row items-end justify-center p-4 md:flex-col md:items-center md:justify-end">
+        <FaLinkedinIn className="m-3 text-2xl text-primary " />
+        <FaGithub className="m-3 text-2xl text-primary" />
+        <HiMail className="m-3 text-2xl text-primary" />
       </div>
     </div>
   );

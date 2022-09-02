@@ -2,22 +2,22 @@ import { IoCloseOutline, IoMenuOutline } from "react-icons/io5";
 import { IProps } from "../types";
 function TopNav({ menu, toggleMenu }: IProps) {
   return (
-    <section className="w-full h-20 pl-10 pr-8 md:pl-16 md:pr-0 border-b border-primary flex justify-between items-center">
+    <section className="flex h-20 w-full items-center justify-between border-b border-primary pl-10 pr-8 md:pl-16 md:pr-0">
       <div>
         {/*TODO Add LOGO Here */}
-        <p className="text-primary text-xl font-semibold tracking-wide">
+        <p className="text-xl font-semibold tracking-wide text-primary">
           Abhigyan
         </p>
       </div>
 
-      <button className="hidden md:flex justify-center items-center w-48 h-full bg-primary text-base text-secondary font-semibold">
+      <button className="hidden h-full w-48 items-center justify-center bg-primary text-base font-semibold text-secondary md:flex">
         CONTACT
       </button>
-      <div className="md:hidden flex" onClick={toggleMenu}>
+      <div className="flex md:hidden" onClick={toggleMenu}>
         {menu ? (
-          <IoCloseOutline className="text-primary text-4xl" />
+          <IoCloseOutline className="text-4xl text-primary" />
         ) : (
-          <IoMenuOutline className="text-primary text-4xl" />
+          <IoMenuOutline className="text-4xl text-primary" />
         )}
       </div>
     </section>

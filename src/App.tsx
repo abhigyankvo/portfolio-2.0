@@ -8,7 +8,7 @@ function App() {
     setMenu(!menu);
   };
   return (
-    <div className="w-full h-[2000px] bg-secondary">
+    <div className="h-[2000px] w-full bg-secondary">
       <LeftNav menu={menu} toggleMenu={toggleMenu} />
       <MainContainer menu={menu} toggleMenu={toggleMenu} />
     </div>
