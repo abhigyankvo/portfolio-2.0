@@ -6,9 +6,9 @@ import {
   SiTailwindcss,
   SiNodedotjs,
   SiExpress,
-  SiMysql,
   SiMongodb,
-  SiReactrouter,
+  // SiReactrouter,
+  // SiMysql,
 } from "react-icons/si";
 import { BsBoxArrowUpRight } from "react-icons/bs";
 const iconStyle = "text-primaryLight text-3xl lg:text-6xl ";
@@ -33,7 +33,7 @@ function Hero() {
     <section className="grid w-full lg:grid-cols-[1.6fr_1fr]">
       {/* Left Hero */}
       <div className="flex w-full flex-col items-center justify-center border-b border-primary p-6 md:items-stretch md:p-16 lg:border-r ">
-        <div className="w-full md:w-[60%] md:min-w-[540px] ">
+        <div className="w-full md:w-[60%] md:min-w-[480px] ">
           {/* Heading */}
           <h1 className="text-[2.8rem] font-extrabold leading-[3rem] tracking-tighter  text-primary md:text-[4rem] md:leading-[4.2rem]">
             Full Stack
@@ -46,7 +46,7 @@ function Hero() {
             Lorem ipsum dolor, sit amet consectetur adipisicing elit.
             Exercitationem, nesciunt! Iusto quibusdam cupiditate vitae
           </p>
-          <p className="my-8 text-sm tracking-wide text-primary">
+          <p className="my-8 text-sm tracking-wider text-primary">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Exercitationem quisquam assumenda quam, laboriosam id eum
           </p>
@@ -64,7 +64,7 @@ function Hero() {
       </div>
       {/* Right Hero */}
       <div className="flex h-full w-full justify-center border-b  border-primary px-4 py-6 lg:min-h-[576px]">
-        <div className=" grid h-full w-full grid-cols-4 gap-8 lg:w-[60%] lg:min-w-[300px] lg:grid-cols-2 lg:gap-0">
+        <div className=" grid h-full w-full grid-cols-4 gap-8 lg:w-[65%] lg:min-w-[300px] lg:grid-cols-2 lg:gap-0">
           {data.map((item) => {
             return (
               <div
@@ -72,7 +72,7 @@ function Hero() {
                 className="flex flex-col items-center justify-center "
               >
                 {item.icon}
-                <p className="mt-3 text-xs font-semibold tracking-wide text-primaryLight md:text-sm">
+                <p className="mt-3 text-xs font-semibold -tracking-wider text-primaryLight md:text-sm">
                   {item.title}
                 </p>
               </div>
