@@ -1,8 +1,11 @@
 import { IoCloseOutline, IoMenuOutline } from "react-icons/io5";
-import { IProps } from "../types";
+import { IProps } from "../utils/types";
 function TopNav({ menu, toggleMenu }: IProps) {
   return (
-    <section className="flex h-20 w-full items-center justify-between border-b border-primary pl-10 pr-8 md:pl-16 md:pr-0">
+    <section
+      id="top-nav"
+      className="flex h-20 w-full items-center justify-between border-b border-primary pl-10 pr-8 md:pl-16 md:pr-0"
+    >
       <div>
         {/*TODO Add LOGO Here */}
         <p className="text-xl font-semibold tracking-wide text-primary">

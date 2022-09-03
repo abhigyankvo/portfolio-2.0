@@ -1,33 +1,5 @@
-import {
-  SiTypescript,
-  SiHtml5,
-  SiReact,
-  SiRedux,
-  SiTailwindcss,
-  SiNodedotjs,
-  SiExpress,
-  SiMongodb,
-  // SiReactrouter,
-  // SiMysql,
-} from "react-icons/si";
 import { BsBoxArrowUpRight } from "react-icons/bs";
-const iconStyle = "text-primaryLight text-3xl lg:text-6xl ";
-const data = [
-  {
-    title: "TypeScript",
-    icon: <SiTypescript className={iconStyle} />,
-  },
-  { title: "NodeJS", icon: <SiNodedotjs className={iconStyle} /> },
-  { title: "React", icon: <SiReact className={iconStyle} /> },
-  { title: "Express", icon: <SiExpress className={iconStyle} /> },
-  { title: "Redux", icon: <SiRedux className={iconStyle} /> },
-  { title: "MongoDB", icon: <SiMongodb className={iconStyle} /> },
-  { title: "Tailwind", icon: <SiTailwindcss className={iconStyle} /> },
-  { title: "HTML/CSS", icon: <SiHtml5 className={iconStyle} /> },
-  //   { title: "React-Router", icon: <SiReactrouter className={iconStyle} /> },
-  //   { title: "SQL", icon: <SiMysql className={iconStyle} /> },
-];
-
+import { skills } from "../utils/data";
 function Hero() {
   return (
     <section className="grid w-full lg:grid-cols-[1.6fr_1fr]">
@@ -35,7 +7,7 @@ function Hero() {
       <div className="flex w-full flex-col items-center justify-center border-b border-primary p-6 md:items-stretch md:p-16 lg:border-r ">
         <div className="w-full md:w-[60%] md:min-w-[480px] ">
           {/* Heading */}
-          <h1 className="text-[2.8rem] font-extrabold leading-[3rem] tracking-tighter  text-primary md:text-[4rem] md:leading-[4.2rem]">
+          <h1 className="text-[2.8rem] font-extrabold leading-[3rem] tracking-tighter  text-primary  md:text-[4rem] md:leading-[4.2rem]">
             Full Stack
             <span className="block text-secondary [filter:drop-shadow(0.2rem_0.2rem_0.4rem_#CE6868)]">
               Web Developer
@@ -65,7 +37,7 @@ function Hero() {
       {/* Right Hero */}
       <div className="flex h-full w-full justify-center border-b  border-primary px-4 py-6 lg:min-h-[576px]">
         <div className=" grid h-full w-full grid-cols-4 gap-8 lg:w-[65%] lg:min-w-[300px] lg:grid-cols-2 lg:gap-0">
-          {data.map((item) => {
+          {skills.map((item) => {
             return (
               <div
                 key={item.title}

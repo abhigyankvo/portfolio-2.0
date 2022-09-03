@@ -1,51 +1,16 @@
 import { BsBoxArrowUpRight } from "react-icons/bs";
 import { HiOutlineExternalLink, HiOutlineCode } from "react-icons/hi";
-
-const projects = [
-  {
-    title: "PetPuja",
-    image: "https://picsum.photos/300/200",
-    desciption: "Website for resturant business",
-    tags: ["React", "Redux", "Tailwind", "Firebase"],
-  },
-  {
-    title: "Yitty",
-    image: "https://picsum.photos/300/200",
-    desciption:
-      "Browser extension to download YouTube videos. Files served from Node backend",
-    tags: ["React", "NodeJS", "Express", "TypeScript"],
-  },
-  {
-    title: "Cabo",
-    image: "https://picsum.photos/300/200",
-    desciption:
-      "Fullstack application to book cabs. Packed with features like authentication, payment intergration, confirmation mail, location autosuggest and more ",
-    tags: [
-      "React",
-      "Router",
-      "Redux",
-      "Node",
-      "Express",
-      "MongoDB",
-      "PassportJS",
-      "Razorpay",
-      "Sendgrid",
-    ],
-  },
-  {
-    title: "Spring",
-    image: "https://picsum.photos/300/200",
-    desciption: "Get weather forcast ",
-    tags: ["React", "Tailwind", "HTML"],
-  },
-];
+import { projects } from "../utils/data";
 
 function Portfolio() {
   return (
-    <section className="flex h-full w-full flex-col items-center justify-center py-10 md:py-16">
+    <section
+      id="projects"
+      className="flex h-full w-full flex-col items-center justify-center py-10 md:py-16"
+    >
       <div className="h-full p-6 lg:w-[75%] lg:p-0">
         {/* Heading */}
-        <div className="w-[90%] md:w-[350px]">
+        <div className="w-[90%] pb-16 md:w-[350px]">
           <h1 className="text-[2.1rem] font-extrabold leading-[3.5rem] tracking-tighter text-primary md:text-[2.8rem]">
             Projects
           </h1>
@@ -67,9 +32,14 @@ function Portfolio() {
         <div className="h-full w-full">
           <div className="grid h-full w-full gap-16 lg:grid-cols-2">
             {/* Grid Item */}
-            {projects.map((item) => {
+            {projects.map((item, index) => {
               return (
-                <div className="h-full w-full">
+                <div
+                  key={item.title}
+                  className={`h-full w-full ${
+                    index % 2 === 1 ? "relative -top-20" : ""
+                  }`}
+                >
                   <div className="flex flex-col border border-primary">
                     {/* Top */}
                     <div className="w-full border-b border-primary p-4">
@@ -90,7 +60,10 @@ function Portfolio() {
                       {/* Tags */}
                       <div className="flex w-full flex-wrap gap-2">
                         {item.tags.map((tag) => (
-                          <p className="border border-primary px-2 py-1 text-xs tracking-widest text-primary">
+                          <p
+                            key={tag}
+                            className="border border-primary px-2 py-1 text-xs tracking-widest text-primary"
+                          >
                             {tag}
                           </p>
                         ))}

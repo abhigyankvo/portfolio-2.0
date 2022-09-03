@@ -1,7 +1,9 @@
 import { IoCloseOutline, IoMenuOutline } from "react-icons/io5";
 import { HiMail } from "react-icons/hi";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
-import { IProps } from "../types";
+import { IProps } from "../utils/types";
+import { Link } from "react-scroll";
+import { navLinks } from "../utils/data";
 
 function LeftNav({ menu, toggleMenu }: IProps) {
   return (
@@ -24,18 +26,42 @@ function LeftNav({ menu, toggleMenu }: IProps) {
       </div>
       {/* Nav Links */}
       <nav className="flex h-full flex-[2] flex-col p-5">
-        <ul className="mt-0 md:mt-20">
-          <li className="px-2 py-5 text-lg text-primary">Home</li>
-          <li className="px-2 py-5 text-lg text-primary">My Works</li>
-          <li className="px-2 py-5 text-lg text-primary">Articles</li>
-          <li className="px-2 py-5 text-lg text-primary">Contact</li>
+        <ul className="mt-0 flex flex-col md:mt-20">
+          {navLinks.map((link) => {
+            return (
+              <Link
+                key={link.title}
+                to={link.elementId}
+                smooth="true"
+                className="group w-full py-4 pl-3 text-base font-medium text-primary hover:cursor-pointer"
+              >
+                <p className=" relative transition-all duration-300 before:absolute before:top-3 before:-left-12 before:h-[1px] before:w-0 before:bg-primary before:transition-all before:duration-300 before:content-[''] group-hover:translate-x-10 group-hover:before:w-10">
+                  {link.title}
+                </p>
+              </Link>
+            );
+          })}
         </ul>
       </nav>
       {/* Social Media links */}
       <div className="flex h-full flex-[1] flex-row items-end justify-center p-4 md:flex-col md:items-center md:justify-end">
-        <FaLinkedinIn className="m-3 text-2xl text-primary " />
-        <FaGithub className="m-3 text-2xl text-primary" />
-        <HiMail className="m-3 text-2xl text-primary" />
+        <a
+          href="http://linkedin.com/in/abhigyan-kumar-verma-5815491b4/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaLinkedinIn className="m-3 text-2xl text-primary " />
+        </a>
+        <a
+          href="http://github.com/abhigyankvo"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaGithub className="m-3 text-2xl text-primary" />
+        </a>
+        <a href="mailto:abhigyankvo@gmail.com?subject=Coming from Portfolio Website">
+          <HiMail className="m-3 text-2xl text-primary" />
+        </a>
       </div>
     </div>
   );
