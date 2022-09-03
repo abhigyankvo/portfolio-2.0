@@ -24,7 +24,9 @@ function Hero() {
           </p>
           {/* Resume Button */}
           <a
-            href="www.google.com"
+            href="https://drive.google.com/file/d/133arx3uikd2BbyZrYgN7H9IgtHilrabO/view?usp=sharing"
+            target={"_blank"}
+            rel="noopener noreferrer"
             className=" group flex w-[85px] items-center gap-3 border-b-2 border-primary py-2 text-sm font-bold tracking-wide text-primary transition-all hover:w-[105px] "
           >
             <p className="transition-all group-hover:translate-x-[22px]">

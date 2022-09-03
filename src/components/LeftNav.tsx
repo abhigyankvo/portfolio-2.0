@@ -50,17 +50,17 @@ function LeftNav({ menu, toggleMenu }: IProps) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <FaLinkedinIn className="m-3 text-2xl text-primary " />
+          <FaLinkedinIn className="m-3 text-2xl text-primary  transition-all hover:scale-110 hover:text-primaryLight" />
         </a>
         <a
           href="http://github.com/abhigyankvo"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <FaGithub className="m-3 text-2xl text-primary" />
+          <FaGithub className="m-3 text-2xl text-primary transition-all hover:scale-110 hover:text-primaryLight" />
         </a>
         <a href="mailto:abhigyankvo@gmail.com?subject=Coming from Portfolio Website">
-          <HiMail className="m-3 text-2xl text-primary" />
+          <HiMail className="m-3 text-2xl text-primary transition-all hover:scale-110 hover:text-primaryLight" />
         </a>
       </div>
     </div>
@@ -68,3 +68,7 @@ function LeftNav({ menu, toggleMenu }: IProps) {
 }
 
 export default LeftNav;
+
+//1fkRHXtktX5qa3-2eRCs0TLCgo_SdnHt6
+//1fkRHXtktX5qa3-2eRCs0TLCgo_SdnHt6
+//1fkRHXtktX5qa3-2eRCs0TLCgo_SdnHt6
