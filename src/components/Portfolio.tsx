@@ -1,7 +1,8 @@
 import { BsBoxArrowUpRight } from "react-icons/bs";
 import { HiOutlineExternalLink, HiOutlineCode } from "react-icons/hi";
 import { projects } from "../utils/data";
-
+import { motion } from "framer-motion";
+import { containerVarinant, slideInViewVariant } from "../utils/animation";
 function Portfolio() {
   return (
     <section
@@ -10,15 +11,31 @@ function Portfolio() {
     >
       <div className="h-full p-6 lg:w-[75%] lg:p-0">
         {/* Heading */}
-        <div className="w-[90%] pb-16 md:w-[350px]">
-          <h1 className="text-[2.1rem] font-extrabold leading-[3.5rem] tracking-tighter text-primary md:text-[2.8rem]">
+        <motion.div className="w-[90%] pb-16 md:w-[350px]">
+          <motion.h1
+            initial="initial"
+            whileInView="animate"
+            variants={containerVarinant}
+            viewport={{ once: true, amount: 1 }}
+            className="text-[2.1rem] font-extrabold leading-[3.5rem] tracking-tighter text-primary md:text-[2.8rem]"
+          >
             Projects
-          </h1>
-          <p className="my-4 text-sm tracking-wider text-primary">
+          </motion.h1>
+          <motion.p
+            initial="initial"
+            whileInView="animate"
+            variants={slideInViewVariant}
+            viewport={{ once: true, amount: 1 }}
+            className="my-4 text-sm tracking-wider text-primary"
+          >
             Here are some of my latest projects. You can visit my github to see
             all of my works.
-          </p>
-          <a
+          </motion.p>
+          <motion.a
+            initial="initial"
+            whileInView="animate"
+            variants={slideInViewVariant}
+            viewport={{ once: true, amount: 1 }}
             href="www.google.com"
             className=" group flex w-[98px] items-center gap-3 border-b-2 border-primary py-2 text-sm font-bold tracking-wide text-primary transition-all hover:w-[115px] "
           >
@@ -26,18 +43,22 @@ function Portfolio() {
               See More
             </p>
             <BsBoxArrowUpRight className="relative -top-[1px] stroke-[1.5px] transition-all group-hover:translate-x-[20px]" />
-          </a>
-        </div>
+          </motion.a>
+        </motion.div>
         {/* Projects */}
         <div className="h-full w-full">
           <div className="grid h-full w-full gap-16 lg:grid-cols-2">
             {/* Grid Item */}
             {projects.map((item, index) => {
               return (
-                <div
+                <motion.div
+                  initial="initial"
+                  whileInView="animate"
+                  variants={slideInViewVariant}
+                  viewport={{ once: true, amount: 0.3 }}
                   key={item.title}
                   className={`h-full w-full ${
-                    index % 2 === 1 ? "relative -top-20" : ""
+                    index % 2 === 1 ? "relative lg:-top-20" : ""
                   }`}
                 >
                   <div className="flex flex-col border border-primary">
@@ -72,7 +93,7 @@ function Portfolio() {
                       <div className="flex w-full items-center gap-x-10">
                         <a
                           href="www.google.com"
-                          className="flex items-center justify-center gap-x-2 bg-primary px-6 py-3 text-secondary"
+                          className="flex items-center justify-center gap-x-2 bg-primary px-6 py-3 text-secondary  transition-all hover:cursor-pointer hover:bg-primaryLight"
                         >
                           <p className="text-sm font-semibold tracking-widest">
                             DEMO
@@ -81,7 +102,7 @@ function Portfolio() {
                         </a>
                         <a
                           href="www.google.com"
-                          className="flex items-center justify-center gap-x-2 bg-primary px-6 py-3 text-secondary"
+                          className="flex items-center justify-center gap-x-2 bg-primary px-6 py-3 text-secondary  transition-all hover:cursor-pointer hover:bg-primaryLight"
                         >
                           <p className="text-sm font-semibold tracking-widest">
                             CODE
@@ -91,7 +112,7 @@ function Portfolio() {
                       </div>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               );
             })}
           </div>

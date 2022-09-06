@@ -1,5 +1,12 @@
 import { BsBoxArrowUpRight } from "react-icons/bs";
 import { skills } from "../utils/data";
+import { motion } from "framer-motion";
+import {
+  childVariant,
+  containerVarinant,
+  slideInViewVariant,
+} from "../utils/animation";
+
 function Hero() {
   return (
     <section className="grid w-full lg:grid-cols-[1.6fr_1fr]">
@@ -7,23 +14,52 @@ function Hero() {
       <div className="flex w-full flex-col items-center justify-center border-b border-primary p-6 md:items-stretch md:p-16 lg:border-r ">
         <div className="w-full md:w-[60%] md:min-w-[480px] ">
           {/* Heading */}
-          <h1 className="text-[2.8rem] font-extrabold leading-[3rem] tracking-tighter  text-primary  md:text-[4rem] md:leading-[4.2rem]">
+          <motion.h1
+            variants={containerVarinant}
+            initial="initial"
+            animate="animate"
+            viewport={{ once: true, amount: 1 }}
+            className="text-[2.8rem] font-extrabold leading-[3rem] tracking-tighter  text-primary md:text-[4rem] md:leading-[4.2rem]"
+          >
             Full Stack
-            <span className="block text-secondary [filter:drop-shadow(0.2rem_0.2rem_0.4rem_#CE6868)]">
+            <motion.span
+              variants={childVariant}
+              className="block text-secondary "
+              style={{
+                filter: "drop-shadow(.2rem .2rem .4rem #CE6868)",
+              }}
+            >
               Web Developer
-            </span>
-          </h1>
+            </motion.span>
+          </motion.h1>
+
           {/* Description */}
-          <p className="mt-20 text-sm tracking-wider text-primary">
+          <motion.p
+            initial="initial"
+            whileInView="animate"
+            variants={slideInViewVariant}
+            viewport={{ once: true, amount: 0.3 }}
+            className="mt-20 text-sm tracking-wider text-primary"
+          >
             Lorem ipsum dolor, sit amet consectetur adipisicing elit.
             Exercitationem, nesciunt! Iusto quibusdam cupiditate vitae
-          </p>
-          <p className="my-8 text-sm tracking-wider text-primary">
+          </motion.p>
+          <motion.p
+            initial="initial"
+            whileInView="animate"
+            variants={slideInViewVariant}
+            viewport={{ once: true, amount: 0.3 }}
+            className="my-8 text-sm tracking-wider text-primary"
+          >
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Exercitationem quisquam assumenda quam, laboriosam id eum
-          </p>
+          </motion.p>
           {/* Resume Button */}
-          <a
+          <motion.a
+            initial="initial"
+            whileInView="animate"
+            variants={slideInViewVariant}
+            viewport={{ once: true, amount: 0.3 }}
             href="https://drive.google.com/file/d/133arx3uikd2BbyZrYgN7H9IgtHilrabO/view?usp=sharing"
             target={"_blank"}
             rel="noopener noreferrer"
@@ -33,7 +69,7 @@ function Hero() {
               RESUME
             </p>
             <BsBoxArrowUpRight className="relative -top-[1px] stroke-[1.5px] transition-all group-hover:translate-x-[20px]" />
-          </a>
+          </motion.a>
         </div>
       </div>
       {/* Right Hero */}

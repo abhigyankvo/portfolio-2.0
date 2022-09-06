@@ -1,4 +1,5 @@
 export interface IProps {
   menu: boolean;
-  toggleMenu: () => void;
+  toggleMenu: (val?: boolean) => void;
+  topMenuRef: React.RefObject<HTMLDivElement>;
 }

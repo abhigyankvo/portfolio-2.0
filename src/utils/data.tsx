@@ -35,7 +35,7 @@ export const navLinks = [
 ];
 export const projects = [
   {
-    title: "PetPuja",
+    title: "Butter-fly",
     image: "https://picsum.photos/300/200",
     desciption: "Website for resturant business",
     tags: ["React", "Redux", "Tailwind", "Firebase"],
